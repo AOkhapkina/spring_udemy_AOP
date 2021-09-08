@@ -7,8 +7,13 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class LoggingAspectAdvice {
-//
-//    @Before("execution (public void spring.AOP.UniLibrary.getBook())")
+
+
+    @Before("execution (public * getBook(spring.AOP.Book,..))")
+    public void beforeGetBookAdvice(){
+        System.out.println("beforeGetBookAdvice: Trying to get a book");
+    }
+//    @Before("execution (public * spring.AOP.UniLibrary.getBook())")
 //    public void beforeGetBookAdvice(){
 //        System.out.println("beforeGetBookAdvice: Trying to get a book");
 //    }

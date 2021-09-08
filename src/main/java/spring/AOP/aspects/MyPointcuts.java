@@ -9,27 +9,35 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class MyPointcuts {
 
-    @Pointcut("execution(* *(..))") //  Pointcut declaration - такое логгирование будет отрабатывать перед всеми методами
-    public void allMethods() {} // private меняем на public
+    @Pointcut("execution(* add*(..))")
+    public void allAddMethods(){}
 
 
-    @Pointcut("execution(* get*(..))")
-    public void allGetMethods(){}
 
-    @Pointcut("execution(* add*(..))|| allGetMethods()")
-    public void allGetAndAddMethods(){}
+//    @Pointcut("execution(* *(..))") //  Pointcut declaration - такое логгирование будет отрабатывать перед всеми методами
+//    public void allMethods() {} // private меняем на public
+//
+//
+//    @Pointcut("execution(* get*(..))")
+//    public void allGetMethods(){}
+//
+//    @Pointcut("execution(* add*(..))|| allGetMethods()")
+//    public void allGetAndAddMethods(){}
+//
+//    @Pointcut("execution(* *(..)) && !allReturnMethods())")
+//    public void withoutReturnMethods(){}
 
-    @Pointcut("execution(* *(..)) && !allReturnMethods())")
-    public void withoutReturnMethods(){}
+
+
 
 
 //    @Pointcut("execution(* spring.AOP.UniLibrary.get*())")
 //    private void allGetMethodsFromUniLibrary() {
 //    }
 //
-    @Pointcut("execution(* return*())")
-    private void allReturnMethods() {
-    }
+//    @Pointcut("execution(* return*())")
+//    private void allReturnMethods() {
+//    }
 //
 //    @Before("allReturnMethodsToTheUniLibrary()")
 //    public void beforeReturnLoggingAdvice() {

@@ -17,9 +17,9 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class LoggingAspectPointcutDeclaration {
 
-//    @Pointcut("execution(* get*())") //  Pointcut declaration
-//    private void allGetMethods() {
-//    }
+    @Pointcut("execution(* get*())") //  Pointcut declaration
+    private void allGetMethods() {
+    }
 //
 //    @Before("allGetMethods()")
 //    public void beforeGetBookAdvice() {
